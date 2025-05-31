@@ -1,9 +1,12 @@
-textSpeakDict = {"lol" : "laugh out loud", "idk" : "i dont know"}
+textSpeakDict = {"lol":"laugh out loud",
+                 "idk": "i dont know"}
 
-text = input("Enter a text to translate: ")
-print(textSpeakDict[text])
+text = input("What would you like to translate?: ")
+print(text, "=", textSpeakDict[text])
 
+#Translate a sentence
 sentence = input("Enter a sentence to translate: ")
+
 words = sentence.split()
 
 translatedSentence = ""
@@ -11,22 +14,10 @@ translatedSentence = ""
 for word in words:
     if word in textSpeakDict:
         translatedSentence = translatedSentence + textSpeakDict[word] + " "
+    
     else:
         translatedSentence = translatedSentence + word + " "
-        
 print(translatedSentence)
-
-
-states = {"Abia":"Umuahia", "Delta":"Asaba", "Imo":"Owerri"}
-
-state = input("Enter a state to get its capital: ")
-
-print()
-
-
-
-
-
 
 
 
