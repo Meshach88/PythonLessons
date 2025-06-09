@@ -1,13 +1,33 @@
 from turtle import *
+from random import *
 
 shape("turtle")
-color("red")
-speed(1)
-pensize(3)
+color('green')
+bgcolor('midnight blue')
+speed(5)
 
-sides = 8
-angle = 360/sides
+def makeStar(starSize,starColor):
+    pendown()
+    color(starColor)
+    begin_fill()
+    for side in range(5):
+        forward(starSize)
+        left(144)
+    end_fill()
+    penup()
 
-for side in range(sides):
-    forward(100)
-    left(angle)
+def randomLocation():
+    penup()
+    setpos(randint(-300,300),randint(-300,300))
+
+def drawGalaxy(numberOfStars):
+    colors = ['pink','yellow','orange','green']
+    for star in range(numberOfStars):
+        randomLocation()
+        makeStar(randint(5,30), choice(colors))
+
+drawGalaxy(30)
+
+
+hideturtle()
+done()
